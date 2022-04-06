@@ -22,6 +22,11 @@ function Home(props) {
   )
 }
 
+function Nav(props) {
+  return(
+    <div onClick={ () => {props.navClick();}}> {props.icon} </div>
+  )
+}
 function App() {
   const [mode, setmode] = useState('welcome');
 
@@ -36,11 +41,14 @@ function App() {
 
     <div className="App">
       <div className='Contain'>
-      <Home clickHandler={() => {
+      <Home clickHandler={ () => {
         setmode('welcome')
       }} />
       <Cont clickHandler={ ()=> {
         setmode('read')
+      }} />
+      <Nav icon='〓' navClick={ () => {
+        console.log('test');
       }} />
       </div>
       <p>{content}</p>

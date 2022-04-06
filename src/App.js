@@ -1,5 +1,5 @@
 // import logo from './logo.svg';
-// import './App.css';
+import './App.css';
 
 import { useState } from "react";
 
@@ -35,14 +35,15 @@ function App() {
   return (
 
     <div className="App">
+      <div className='Contain'>
       <Home clickHandler={() => {
         setmode('welcome')
       }} />
       <Cont clickHandler={ ()=> {
         setmode('read')
       }} />
-      
-      {content}
+      </div>
+      <p>{content}</p>
     </div>
     
   );
